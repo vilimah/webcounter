@@ -19,3 +19,21 @@ Resetting the counter works
     Go To  ${HOME_URL}
     Click Button  Nollaa
     Page Should Contain  nappia painettu 0 kertaa
+
+Add amount increases counter
+    Go To  ${HOME_URL}
+    Click Button  Nollaa
+    Page Should Contain  nappia painettu 0 kertaa
+    Input Text  id=amount  3
+    Click Button  Lisää
+    Page Should Contain  nappia painettu 3 kertaa
+
+Add multiple amounts accumulate
+    Go To  ${HOME_URL}
+    Click Button  Nollaa
+    Page Should Contain  nappia painettu 0 kertaa
+    Input Text  id=amount  2
+    Click Button  Lisää
+    Input Text  id=amount  5
+    Click Button  Lisää
+    Page Should Contain  nappia painettu 7 kertaa
